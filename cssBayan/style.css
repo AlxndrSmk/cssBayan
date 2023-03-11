@@ -8,6 +8,10 @@
     color: rgba(0, 0, 255);
 }
 
+label:active img {
+    opacity: .4;
+}
+
 h1 {
     width: 100%;
     color: rgb(0, 0, 0);
@@ -39,13 +43,13 @@ header {
     width: 4vh;
     height: 4vh;
     position: relative;
+    display: none;
 }
 
 .plus_icon,
 .plus_icon::before,
 .plus_icon::after {
     transition: all 0.3s ease 0s;
-    /* display: none; */
 }
 
 .plus_icon::before,
@@ -73,7 +77,6 @@ img {
     width: 80%;
     height: 0;
     overflow: hidden;
-    transition: .9s;
     max-width: 70vh;
     margin-bottom: 3vh;
 }
@@ -85,6 +88,22 @@ input {
 input:checked~img {
     height: auto;
     padding: 3vh 0;
+}
+
+input:checked~div .plus_icon {
+    display: block;
+}
+
+label:hover .plus_icon::before,
+input:checked~div .plus_icon::before {
+    transform: rotate(45deg);
+    left: 0;
+}
+
+label:hover .plus_icon::after,
+input:checked~div .plus_icon::after {
+    transform: rotate(-45deg);
+    top: 43%;
 }
 
 label:hover img {
@@ -113,6 +132,10 @@ label {
 
     .wrapper:hover .title {
         color: rgb(0, 0, 0);
+    }
+
+    .wrapper:hover .plus_icon {
+        display: block;
     }
 
     .wrapper:hover {
