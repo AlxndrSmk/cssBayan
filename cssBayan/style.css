@@ -4,10 +4,17 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #3d3d3d;
+    font-size: 4vh;
+    color: rgba(0, 0, 255);
+}
+
+.wrapper {
+width: 100%;
+height: 100%;
 }
 
 body {
+    padding: 7%;
     border: 3px solid black;
     min-width: 320px;
     min-height: 100%;
@@ -27,7 +34,7 @@ header {
 }
 
 img {
-    width: 60%;
+    width: 70%;
     /* height: 60%; */
     height: 0;
     overflow: hidden;
@@ -40,11 +47,25 @@ input {
     display: none;
 }
 
-input:checked + label + img {
+input:checked+label+img {
     height: auto;
-	padding: 10px 0;
+    padding: 10px 0;
 }
 
 label {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
     margin: 5% 5%;
+    padding-top: 10vh;
+}
+
+@media all and (min-width: 1100px) {
+    label:hover {
+        cursor: pointer;
+        color: blue;
+    }
+
+    .wrapper:hover {
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+    }
 }
