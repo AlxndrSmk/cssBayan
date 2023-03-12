@@ -37,19 +37,14 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .plus_icon {
-    width: 4vh;
-    height: 4vh;
+    width: 3vh;
+    height: 3vh;
     position: relative;
-    display: none;
-}
-
-.plus_icon,
-.plus_icon::before,
-.plus_icon::after {
-    transition: all 0.3s ease 0s;
+    display: block;
 }
 
 .plus_icon::before,
@@ -75,7 +70,7 @@ header {
 
 img {
     max-height: 0;
-    width: 50%;
+    width: 70%;
     max-width: 70vh;
     margin-bottom: 3vh;
     transition: 0.2s ease;
@@ -109,7 +104,6 @@ input:checked~div .plus_icon::after {
 label:hover img {
     max-height: 100vh;
     transition: max-height 0.5s ease;
-
 }
 
 input:checked~div .title {
@@ -124,16 +118,14 @@ label {
     align-items: center;
 }
 
+input:hover:active~div .title {
+    color: rgb(67, 136, 220);
+}
+
 input:checked:active~div .title {
     color: rgb(67, 136, 220);
 }
 
-input:active~div .title {
-    color: rgb(67, 136, 220);
-}
-
-input:checked:active~div .plus_icon:before,
-input:checked:active~div .plus_icon:after,
 input:active~div .plus_icon:before,
 input:active~div .plus_icon:after {
     background: rgb(67, 136, 220);
@@ -160,4 +152,14 @@ input:active~div .plus_icon:after {
     .wrapper:hover {
         cursor: pointer;
     }
+
+    .plus_icon {
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .plus_icon {
+        display: none;
+    }
+
 }
