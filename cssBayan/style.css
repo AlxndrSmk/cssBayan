@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 4vh;
+    font-size: 3vh;
     color: rgba(0, 0, 255);
 }
 
@@ -74,11 +74,11 @@ header {
 }
 
 img {
-    width: 80%;
-    height: 0;
-    overflow: hidden;
+    max-height: 0;
+    width: 50%;
     max-width: 70vh;
     margin-bottom: 3vh;
+    transition: 0.2s ease;
 }
 
 input {
@@ -86,7 +86,7 @@ input {
 }
 
 input:checked~img {
-    height: auto;
+    max-height: 100vh;
     padding: 3vh 0;
 }
 
@@ -107,9 +107,9 @@ input:checked~div .plus_icon::after {
 }
 
 label:hover img {
-    height: auto;
-    padding: 3vh 0;
-    transition: .9s ease;
+    max-height: 100vh;
+    transition: max-height 0.5s ease;
+
 }
 
 input:checked~div .title {
@@ -124,7 +124,26 @@ label {
     align-items: center;
 }
 
+input:checked:active~div .title {
+    color: rgb(67, 136, 220);
+}
+
+input:active~div .title {
+    color: rgb(67, 136, 220);
+}
+
+input:checked:active~div .plus_icon:before,
+input:checked:active~div .plus_icon:after,
+input:active~div .plus_icon:before,
+input:active~div .plus_icon:after {
+    background: rgb(67, 136, 220);
+}
+
 @media all and (min-width: 1100px) {
+    * {
+        font-size: 5vh;
+    }
+
     label:hover {
         cursor: pointer;
         color: blue;
